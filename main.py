@@ -18,7 +18,6 @@ listaPRDE = []
 punktyde = 0
 punktygede = 0
 punktyprde = 0
-
 timestart = 0
 timeend = 0
 
@@ -30,6 +29,7 @@ def DE(linia):
 
 def GEDE(linia):
     return getline("CzasownikiGEDE.txt", linia).strip()
+
 def PRDE(linia):
     return getline("CzasownikiPRDE", linia).strip()
 
@@ -38,7 +38,6 @@ def clear():
 
 clear()
 print("Hasło OK")
-
 
 def ktoryTest():
     while True:
@@ -96,24 +95,22 @@ while True:
     print('')
     print('1. Practise Mode')
     print('2. Test Mode')
+    print('3. Info')
     mode = input()
 
     if mode == '1':
         ktoryTest()
         for i in range(0, 10):
-            print(f"Słowo {listaPL[i]} jest po niemiecku {listaDE[i]}, w perfekt jest {listaGEDE[i]} i w prateritum {listaPRDE[i]}")
-            input()
+            input(f"Słowo {listaPL[i]} jest po niemiecku {listaDE[i]}, w perfekt jest {listaGEDE[i]} i w prateritum {listaPRDE[i]}")
             clear()
     elif mode == '2':
         ktoryTest()
         timestart = int(time.time())
         for i in range(0, 10):
-            print(f"Słowo: {listaPL[i]} po niemiecku to: ", end="")
-            odp1 = input()
-            print("W perfekt to: ", end="")
-            odp2 = input()
-            print("A w Prateritum to: ", end="")
-            odp3 = input()
+            print()
+            odp1 = input(f"Słowo: {listaPL[i]} po niemiecku to: ")
+            odp2 = input("W perfekt to: ")
+            odp3 = input("A w Prateritum to: ")
             print("")
             print("")
             if odp1 == listaDE[i]:
@@ -142,12 +139,18 @@ while True:
         srednia = (punktyde + punktygede + punktyprde) // 3
         print(f"Srednia to: {srednia}")
         czas = srednia / (timeend - timestart)
-        print(f"punktow {czas}")
+        print(f"Wynik: {czas}")
         punktyde = 0
         punktyprde = 0
         punktygede = 0
 
     elif mode == 'exit':
         exit()
+    elif mode == '3':
+        print("Program służący do nauki nieregularnych form wyrazów w języku polskim, niemieckim, Partizip II i Prateritum z podręcznika pomocą Wir smart 3.")
+        print("Wpisz 1 dla nauki czasownikow")
+        print("Wpisz 2 dla sprawdzenia swoich umiejetnosci")
+        print("Wpisz 3 dla tego menu")
+        print("Wpisz 'exit' zeby wyjsc")
     else:
         clear()
