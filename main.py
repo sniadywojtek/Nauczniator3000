@@ -96,6 +96,7 @@ while True:
     print('1. Practise Mode')
     print('2. Test Mode')
     print('3. Info')
+    print('exit. Wyjscie')
     mode = input()
 
     if mode == '1':
