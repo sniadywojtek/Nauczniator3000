@@ -46,6 +46,10 @@ def ktoryTest():
         ktory = input('Podaj cyfre 1-4:')
         match ktory:
             case '1':
+                listaPL.clear()
+                listaDE.clear()
+                listaPRDE.clear()
+                listaGEDE.clear()
                 losowe = random.sample(range(1, 11), 10)
                 for losowa in losowe:
                     listaPL.append(PL(losowa))
@@ -78,7 +82,16 @@ def ktoryTest():
                     listaPRDE.append(PRDE(losowa))
                 break
             case '4':
-                pass
+                listaPL.clear()
+                listaDE.clear()
+                listaPRDE.clear()
+                listaGEDE.clear()
+                losowe = random.sample(range(31, 42), 10)
+                for losowa in losowe:
+                    listaPL.append(PL(losowa))
+                    listaDE.append(DE(losowa))
+                    listaGEDE.append(GEDE(losowa))
+                    listaPRDE.append(PRDE(losowa))
                 break
             case _:
                 pass
@@ -115,22 +128,22 @@ while True:
             print("")
             print("")
             if odp1 == listaDE[i]:
-                print("Dobrze, +1 punkt")
                 punktyde += 1
+                print(f"Dobrze, +1 punkt ({punktyde}/{i + 1})")
             else:
-                print(f"Źle, {listaPL[i]} to {listaDE[i]}")
+                print(f"Źle, {listaPL[i]} to {listaDE[i]} ({punktyde}/{i + 1})")
 
             if odp2 == listaGEDE[i]:
-                print("Dobrze, +1 punkt")
                 punktygede += 1
+                print(f"Dobrze, +1 punkt ({punktygede}/{i + 1})")
             else:
-                print(f"Źle, w perfekt {listaDE[i]} to {listaGEDE[i]}")
+                print(f"Źle, w perfekt {listaDE[i]} to {listaGEDE[i]} ({punktygede}/{i + 1})")
 
             if odp3 == listaPRDE[i]:
-                print("Dobrze, +1 punkt")
                 punktyprde += 1
+                print(f"Dobrze, +1 punkt ({punktyprde}/{i + 1})")
             else:
-                print(f"Źle, w prateritum {listaDE[i]} to {listaPRDE[i]}")
+                print(f"Źle, w prateritum {listaDE[i]} to {listaPRDE[i]} ({punktyprde}/{i + 1})")
             input()
             clear()
         timeend = int(time.time())

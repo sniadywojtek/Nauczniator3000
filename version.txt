@@ -1,5 +1,1 @@
-v1.1.0
-
-This version
--makes minor changes to the code
--adds an 'Info' submenu
+v2.0.0
